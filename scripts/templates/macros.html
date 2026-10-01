@@ -1,0 +1,99 @@
+{# Reusable presentational macros shared by every page template. #}
+
+{# `dark=True` must be passed whenever this heading sits directly on a .solid-surface(-light)
+   background (not inside a light card) so the title/subtitle stay readable. #}
+{% macro section_heading(eyebrow, title, subtitle=None, align="left", dark=False) -%}
+<div class="{{ 'mx-auto text-center max-w-3xl' if align == 'center' else 'max-w-3xl' }} mb-10 md:mb-14">
+  {% if eyebrow %}<span class="badge-gold mb-4 inline-block {{ '!border-gold-400/60 !text-gold-400' if dark else '' }}">{{ eyebrow }}</span>{% endif %}
+  <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] font-bold leading-tight {{ 'text-white' if dark else '' }}">{{ title }}</h2>
+  {% if subtitle %}<p class="mt-4 text-base sm:text-lg leading-relaxed {{ 'text-white/75' if dark else 'text-navy-700' }}">{{ subtitle }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro img_holder(label, ratio="aspect-[4/3]", src=None, base="") -%}
+<div class="img-holder {{ ratio }}">
+  <img src="{{ src or (base ~ image_for(label)) }}"
+       alt="{{ label }}" loading="lazy" />
+</div>
+{%- endmacro %}
+
+{% macro glass_card_open(extra="") -%}
+<div class="glass-card p-6 sm:p-7 {{ extra }}">
+{%- endmacro %}
+
+{% macro stat_card(value, label) -%}
+<div class="stat-card">
+  <p class="text-3xl sm:text-4xl font-serif font-bold text-navy-900">{{ value }}</p>
+  <p class="mt-1 text-sm font-medium text-navy-600">{{ label }}</p>
+</div>
+{%- endmacro %}
+
+{% macro btn_gold(label, href) -%}
+<a href="{{ href }}" class="btn-gold">{{ label }}</a>
+{%- endmacro %}
+
+{% macro btn_outline_gold(label, href) -%}
+<a href="{{ href }}" class="btn-outline-gold">{{ label }}</a>
+{%- endmacro %}
+
+{% macro cta_banner(title, body, primary_label, primary_href, secondary_label=None, secondary_href=None) -%}
+<div class="glass-cta p-8 sm:p-12 text-center">
+  <h3 class="text-2xl sm:text-3xl font-bold text-white">{{ title }}</h3>
+  <p class="mt-4 text-white/85 max-w-2xl mx-auto leading-relaxed">{{ body }}</p>
+  <div class="mt-7 flex flex-wrap items-center justify-center gap-4">
+    <a href="{{ primary_href }}" class="btn-gold">{{ primary_label }}</a>
+    {% if secondary_label %}<a href="{{ secondary_href }}" class="btn-ghost-light">{{ secondary_label }}</a>{% endif %}
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro team_card(name, role, bio, image_label, base="") -%}
+<div class="glass-card-light overflow-hidden">
+  <div class="img-holder aspect-[1/1] rounded-none border-0 border-b-4 border-gold-500">
+    <img src="{{ base ~ image_for(image_label) }}" alt="{{ name }}" loading="lazy" />
+  </div>
+  <div class="p-5">
+    <h4 class="text-lg font-bold text-navy-900">{{ name }}</h4>
+    <p class="text-sm font-semibold text-gold-700">{{ role }}</p>
+    <p class="mt-2 text-sm text-navy-700 leading-relaxed">{{ bio }}</p>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro faq_item(question, answer, open=false) -%}
+<div class="glass-card-light" data-accordion-item data-open="{{ 'true' if open else 'false' }}">
+  <button type="button" data-accordion-trigger class="flex w-full items-center justify-between gap-4 p-5 text-left">
+    <span class="font-semibold text-navy-900">{{ question }}</span>
+    <svg data-chevron class="h-5 w-5 flex-shrink-0 text-gold-600 transition-transform duration-200 {{ 'rotate-180' if open else '' }}" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+  </button>
+  <div data-accordion-panel class="overflow-hidden px-5 transition-[max-height] duration-300 ease-in-out" style="max-height: {{ '999px' if open else '0px' }};">
+    <p class="pb-5 text-sm sm:text-base text-navy-700 leading-relaxed">{{ answer }}</p>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro pill(text, dark=False) -%}
+<span class="inline-block rounded-full px-3 py-1 text-xs font-semibold {{ 'border border-white/30 bg-white/10 text-white' if dark else 'border border-navy-800/10 bg-navy-800/5 text-navy-800' }}">{{ text }}</span>
+{%- endmacro %}
+
+{# Solid-background hero/page banner — never glass, per brand rule. #}
+{% macro hero_banner(eyebrow, title, subtitle, breadcrumbs, base) -%}
+<section class="solid-surface relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 opacity-20" style="background-image:radial-gradient(circle at 20% 20%, #b8860b 0, transparent 45%), radial-gradient(circle at 80% 60%, #1f3d76 0, transparent 50%);"></div>
+  <div class="page-shell relative py-8 sm:py-10 md:py-14">
+    <nav class="mb-6 flex flex-wrap items-center gap-2 text-xs text-white/60" aria-label="Breadcrumb">
+      {% for crumb in breadcrumbs %}
+        {% if not loop.last %}
+          <a href="{{ crumb.href }}" class="hover:text-gold-400">{{ crumb.label }}</a>
+          <span>/</span>
+        {% else %}
+          <span class="text-gold-400">{{ crumb.label }}</span>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    {% if eyebrow %}<span class="badge-gold mb-4 inline-block !border-gold-400/60 !text-gold-400">{{ eyebrow }}</span>{% endif %}
+    <h1 class="max-w-4xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">{{ title }}</h1>
+    {% if subtitle %}<p class="mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">{{ subtitle }}</p>{% endif %}
+  </div>
+</section>
+{%- endmacro %}

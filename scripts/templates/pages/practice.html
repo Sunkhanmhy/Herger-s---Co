@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+
+{% block content %}
+{{ m.hero_banner(hero.eyebrow, hero.title, hero.subtitle, hero.breadcrumbs, base) }}
+
+{# ---------- Overview ---------- #}
+<section class="page-shell section-y">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
+    <div class="lg:col-span-7">
+      {{ m.section_heading("Practice Overview", overview.heading) }}
+      <div class="space-y-5 text-base leading-relaxed text-navy-700">
+        {% for para in overview.paragraphs %}
+        <p>{{ para }}</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="lg:col-span-5">
+      {{ m.img_holder(overview.image_label, base=base) }}
+      <div class="glass-card-light mt-6 p-6">
+        <h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-gold-700">At a Glance</h4>
+        <ul class="space-y-2 text-sm text-navy-800">
+          {% for fact in overview.at_a_glance %}
+          <li class="flex gap-2"><span class="text-gold-600">&#9656;</span><span>{{ fact }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- Key Legislation ---------- #}
+<section class="solid-surface-light">
+  <div class="page-shell section-y">
+    {{ m.section_heading("Regulatory Framework", "Key Nigerian Legislation Governing This Practice", legislation.intro, dark=True) }}
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {% for item in legislation.entries %}
+      <div class="glass-card-light p-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-gold-700">{{ item.act }}</p>
+        <p class="mt-2 text-sm leading-relaxed text-navy-700">{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Services ---------- #}
+<section class="page-shell section-y">
+  {{ m.section_heading("What We Do", "Our Services in " ~ hero.title, services.intro) }}
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {% for service in services.entries %}
+    <div class="glass-card p-6">
+      <span class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg border border-gold-500 text-sm font-bold text-gold-400">{{ loop.index }}</span>
+      <h4 class="font-bold text-white">{{ service.title }}</h4>
+      <p class="mt-2 text-sm leading-relaxed text-white/75">{{ service.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ---------- Approach ---------- #}
+<section class="solid-surface-light">
+  <div class="page-shell section-y">
+    {{ m.section_heading("How We Work", "Our Approach", approach.intro, dark=True) }}
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {% for step in approach.steps %}
+      <div class="text-center">
+        <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold-500 font-serif text-xl font-bold text-gold-400">{{ loop.index }}</div>
+        <h4 class="font-bold text-white">{{ step.title }}</h4>
+        <p class="mt-2 text-sm leading-relaxed text-white/75">{{ step.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Sector focus / illustrative engagements ---------- #}
+<section class="page-shell section-y">
+  {{ m.section_heading("Sector Focus", "Illustrative Engagements", engagements.intro) }}
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+    {% for eng in engagements.entries %}
+    <div>
+      {{ m.img_holder(eng.image_label, ratio="aspect-[16/10]", base=base) }}
+      <h4 class="mt-4 font-bold text-navy-900">{{ eng.title }}</h4>
+      <p class="mt-2 text-sm leading-relaxed text-navy-700">{{ eng.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ---------- Stats ---------- #}
+<section class="solid-surface">
+  <div class="page-shell section-y">
+    <div class="grid grid-cols-2 gap-5 sm:grid-cols-4">
+      {% for stat in stats %}
+      {{ m.stat_card(stat.value, stat.label) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- FAQs ---------- #}
+<section class="page-shell section-y">
+  {{ m.section_heading("Frequently Asked Questions", faqs.heading) }}
+  <div class="mx-auto max-w-3xl space-y-4" data-accordion-group>
+    {% for faq in faqs.entries %}
+    {{ m.faq_item(faq.q, faq.a, open=loop.first) }}
+    {% endfor %}
+  </div>
+</section>
+
+{# ---------- Related practices ---------- #}
+<section class="solid-surface-light">
+  <div class="page-shell section-y">
+    {{ m.section_heading("Explore More", "Related Practice Areas", dark=True) }}
+    <div class="flex flex-wrap gap-3">
+      {% for rp in related_practices %}
+      <a href="{{ base }}practices/{{ rp.slug }}.html" class="badge-gold hover:bg-gold-500 hover:text-navy-950">{{ rp.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- CTA ---------- #}
+<section class="page-shell section-y">
+  {{ m.cta_banner(cta.title, cta.body, "Schedule a Free Consultation", base ~ "contact.html#schedule-consultation", "Contact This Team", base ~ "contact.html#contact-form") }}
+</section>
+{% endblock %}

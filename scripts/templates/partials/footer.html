@@ -1,0 +1,65 @@
+{# Solid-background footer: sitemap, contact, newsletter (glass card is fine to nest inside solid footer since the CTA card itself is glass, footer surface stays solid). #}
+<footer id="footer" class="solid-surface-light border-t border-white/10 scroll-mt-24">
+  <div class="page-shell section-y">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <a href="{{ base }}index.html" class="flex items-center gap-3">
+          <span class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold-500 font-serif text-lg font-bold text-gold-400">H&amp;C</span>
+          <span class="font-serif text-lg font-bold text-white">Herger's &amp; Co.</span>
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-white/70">
+          {{ footer.tagline }}
+        </p>
+        <div class="mt-5 flex gap-3">
+          {% for link in footer.social_links %}
+          <a href="{{ link.href }}" aria-label="{{ link.label }}" class="flex h-9 w-9 items-center justify-center rounded-full border border-gold-500/50 text-xs text-gold-400 hover:bg-gold-500 hover:text-navy-950">{{ link.label[0] }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div>
+        <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-gold-400">Company</h5>
+        <ul class="space-y-2.5 text-sm text-white/75">
+          <li><a href="{{ base }}company/about.html" class="hover:text-gold-400">About Herger's &amp; Co.</a></li>
+          <li><a href="{{ base }}company/partners.html" class="hover:text-gold-400">Our Partners</a></li>
+          <li><a href="{{ base }}company/clients.html" class="hover:text-gold-400">Our Clients</a></li>
+          <li><a href="{{ base }}company/careers.html" class="hover:text-gold-400">Careers &amp; Positions</a></li>
+          <li><a href="{{ base }}news-events.html" class="hover:text-gold-400">News &amp; Events</a></li>
+          <li><a href="{{ base }}publications.html" class="hover:text-gold-400">Publications</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-gold-400">Practices &amp; Law</h5>
+        <ul class="grid grid-cols-1 gap-2.5 text-sm text-white/75">
+          {% for practice in practices %}
+          <li><a href="{{ base }}practices/{{ practice.slug }}.html" class="hover:text-gold-400">{{ practice.short_label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-gold-400">{{ footer.newsletter_heading }}</h5>
+        <p class="mb-4 text-sm text-white/70">{{ footer.newsletter_blurb }}</p>
+        <form data-api-form="{{ base }}api/newsletter.php" class="space-y-3" novalidate>
+          <input type="text" name="hp_confirm" class="hidden" tabindex="-1" autocomplete="off" />
+          <input type="text" name="name" placeholder="Full name" class="field-input-dark" />
+          <input type="email" name="email" placeholder="Email address" required class="field-input-dark" />
+          <button type="submit" class="btn-gold w-full">Subscribe</button>
+          <p data-form-status hidden class="text-xs" role="status"></p>
+        </form>
+
+        <div class="mt-6 space-y-1.5 text-sm text-white/70">
+          <p>{{ footer.address }}</p>
+          <p>{{ footer.phone }}</p>
+          <p>{{ footer.email }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
+      <p>&copy; {{ year }} {{ footer.copyright_line }}</p>
+      <p>{{ footer.legal_line }}</p>
+    </div>
+  </div>
+</footer>
