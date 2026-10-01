@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+
+{% block content %}
+{{ m.hero_banner(hero.eyebrow, hero.title, hero.subtitle, hero.breadcrumbs, base) }}
+
+<section class="page-shell section-y">
+  <div class="mx-auto max-w-3xl">
+    {{ m.section_heading("About Our Publications", intro.heading, align="center") }}
+  </div>
+  <div class="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-navy-700">
+    {% for para in intro.paragraphs %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="solid-surface-light">
+  <div class="page-shell section-y">
+    <div class="mb-8 flex flex-wrap justify-center gap-3">
+      {% for cat in categories %}{{ m.pill(cat, dark=True) }}{% endfor %}
+    </div>
+    {{ m.section_heading("Editor's Picks", featured.heading, align="center", dark=True) }}
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      {% for item in featured.entries %}
+      <a href="{{ base }}practices/{{ item.practice_slug }}.html" class="glass-card-light block overflow-hidden">
+        {{ m.img_holder(item.image_label, ratio="aspect-[16/10]", base=base) }}
+        <div class="p-5">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold-700">{{ item.category }}</span>
+          <h4 class="mt-2 font-bold text-navy-900">{{ item.title }}</h4>
+          <p class="mt-2 text-sm leading-relaxed text-navy-700">{{ item.excerpt }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="page-shell section-y">
+  {{ m.section_heading("Full Library", articles.heading, align="center") }}
+  <div class="mx-auto max-w-4xl divide-y divide-navy-800/10">
+    {% for item in articles.entries %}
+    <a href="{{ base }}practices/{{ item.practice_slug }}.html" class="flex flex-col gap-1 py-5 hover:text-gold-700 sm:flex-row sm:items-center sm:justify-between">
+      <span class="font-semibold text-navy-900">{{ item.title }}</span>
+      <span class="text-xs font-bold uppercase tracking-wider text-gold-700">{{ item.category }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-shell section-y">
+  {{ m.cta_banner(cta.title, cta.body, "Schedule a Free Consultation", base ~ "contact.html#schedule-consultation", "Browse Practice Areas", base ~ "index.html#practices") }}
+</section>
+{% endblock %}
