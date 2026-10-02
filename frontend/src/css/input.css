@@ -108,4 +108,20 @@
   .stat-card {
     @apply glass-card-light p-6 text-center;
   }
+
+  /* ---------- Hero / banner: auto-resizes to the device's visible viewport ---------- */
+  .hero-banner {
+    @apply min-h-dvh;
+  }
+  /* .hero-main (image holder + text content) is hidden below md; shown at md: via "hidden md:grid"
+     on the element itself (see home.html). The standalone-PWA rule below additionally force-hides
+     it even on md+ viewports when the site is launched as an installed PWA. */
+}
+
+/* Installed PWA (display-mode: standalone) always hides the hero's image holder + content,
+   regardless of screen width — kept outside @layer so it reliably wins over the md: utility. */
+@media (display-mode: standalone) {
+  .hero-main {
+    display: none !important;
+  }
 }

@@ -1,6 +1,7 @@
 """Static site generator: renders every page from Jinja2 templates + content data.
 
-Run with: python3 scripts/generate_site.py  (see package.json "build:site").
+Templates/content live in backend/scripts; rendered HTML is written into ../frontend
+(see package.json "build:site" in frontend/, which invokes this via ../backend/scripts).
 """
 from __future__ import annotations
 
@@ -10,6 +11,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 ROOT = Path(__file__).resolve().parent.parent
+FRONTEND = ROOT.parent / "frontend"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import base_context, PRACTICES, image_for  # noqa: E402
@@ -29,7 +31,7 @@ def render_page(template_name: str, output_path: Path, context: dict) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(html, encoding="utf-8")
     word_count = len(html.split())
-    print(f"  wrote {output_path.relative_to(ROOT)}  (~{word_count} words incl. markup)")
+    print(f"  wrote {output_path.relative_to(ROOT.parent)}  (~{word_count} words incl. markup)")
 
 
 def main() -> None:
@@ -39,20 +41,20 @@ def main() -> None:
 
     print("Building Herger & Co. static site...")
 
-    render_page("pages/home.html", ROOT / "index.html", {
+    render_page("pages/home.html", FRONTEND / "index.html", {
         **base_context("", "home"), **home.CONTEXT,
     })
 
-    render_page("pages/about.html", ROOT / "company" / "about.html", {
+    render_page("pages/about.html", FRONTEND / "company" / "about.html", {
         **base_context("../", "company"), **about.CONTEXT,
     })
-    render_page("pages/partners.html", ROOT / "company" / "partners.html", {
+    render_page("pages/partners.html", FRONTEND / "company" / "partners.html", {
         **base_context("../", "company"), **partners.CONTEXT,
     })
-    render_page("pages/clients.html", ROOT / "company" / "clients.html", {
+    render_page("pages/clients.html", FRONTEND / "company" / "clients.html", {
         **base_context("../", "company"), **clients.CONTEXT,
     })
-    render_page("pages/careers.html", ROOT / "company" / "careers.html", {
+    render_page("pages/careers.html", FRONTEND / "company" / "careers.html", {
         **base_context("../", "company"), **careers.CONTEXT,
     })
 
@@ -61,17 +63,17 @@ def main() -> None:
         page_ctx = dict(PRACTICE_PAGES[slug])
         others = PRACTICES[:index] + PRACTICES[index + 1:]
         page_ctx["related_practices"] = others[:4]
-        render_page("pages/practice.html", ROOT / "practices" / f"{slug}.html", {
+        render_page("pages/practice.html", FRONTEND / "practices" / f"{slug}.html", {
             **base_context("../", "practices"), **page_ctx,
         })
 
-    render_page("pages/news_events.html", ROOT / "news-events.html", {
+    render_page("pages/news_events.html", FRONTEND / "news-events.html", {
         **base_context("", "news"), **news_events.CONTEXT,
     })
-    render_page("pages/publications.html", ROOT / "publications.html", {
+    render_page("pages/publications.html", FRONTEND / "publications.html", {
         **base_context("", "publications"), **publications.CONTEXT,
     })
-    render_page("pages/contact.html", ROOT / "contact.html", {
+    render_page("pages/contact.html", FRONTEND / "contact.html", {
         **base_context("", "contact"), **contact_content.CONTEXT,
     })
 
