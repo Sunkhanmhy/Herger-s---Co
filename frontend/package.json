@@ -9,7 +9,8 @@
     "build:js": "esbuild src/ts/main.ts --bundle --minify --outfile=assets/js/main.js --target=es2019",
     "watch:js": "esbuild src/ts/main.ts --bundle --outfile=assets/js/main.js --target=es2019 --watch",
     "build:site": "python3 ../backend/scripts/generate_site.py",
-    "build": "npm run build:css && npm run build:js && npm run build:site"
+    "build": "npm run build:css && npm run build:js && npm run build:site",
+    "dev": "npm run build && php -S localhost:8000 -t . ../router.php"
   },
   "devDependencies": {
     "esbuild": "^0.23.0",
