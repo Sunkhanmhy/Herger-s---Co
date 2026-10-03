@@ -1,7 +1,0 @@
-# Railway (Nixpacks): serve the pre-built static frontend/ and proxy /api/*.php
-# to backend/api/ via router.php — same setup used for local dev (see router.php).
-[phases.setup]
-nixPkgs = ["php83"]
-
-[start]
-cmd = "php -S 0.0.0.0:$PORT -t frontend router.php"
