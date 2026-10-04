@@ -109,9 +109,9 @@
     @apply glass-card-light p-6 text-center;
   }
 
-  /* ---------- Hero / banner: auto-resizes to the device's visible viewport ---------- */
+  /* ---------- Hero / banner: fills the viewport below the sticky h-20 header (reduced top gap) ---------- */
   .hero-banner {
-    @apply min-h-dvh;
+    @apply min-h-[calc(100dvh-5rem)];
   }
   /* .hero-main (image holder + text content) is hidden below md; shown at md: via "hidden md:grid"
      on the element itself (see home.html). The standalone-PWA rule below additionally force-hides

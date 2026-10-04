@@ -46,16 +46,16 @@ def main() -> None:
     })
 
     render_page("pages/about.html", FRONTEND / "company" / "about.html", {
-        **base_context("../", "company"), **about.CONTEXT,
+        **base_context("../", "company", "about"), **about.CONTEXT,
     })
     render_page("pages/partners.html", FRONTEND / "company" / "partners.html", {
-        **base_context("../", "company"), **partners.CONTEXT,
+        **base_context("../", "company", "partners"), **partners.CONTEXT,
     })
     render_page("pages/clients.html", FRONTEND / "company" / "clients.html", {
-        **base_context("../", "company"), **clients.CONTEXT,
+        **base_context("../", "company", "clients"), **clients.CONTEXT,
     })
     render_page("pages/careers.html", FRONTEND / "company" / "careers.html", {
-        **base_context("../", "company"), **careers.CONTEXT,
+        **base_context("../", "company", "careers"), **careers.CONTEXT,
     })
 
     for index, practice in enumerate(PRACTICES):
@@ -64,7 +64,7 @@ def main() -> None:
         others = PRACTICES[:index] + PRACTICES[index + 1:]
         page_ctx["related_practices"] = others[:4]
         render_page("pages/practice.html", FRONTEND / "practices" / f"{slug}.html", {
-            **base_context("../", "practices"), **page_ctx,
+            **base_context("../", "practices", slug), **page_ctx,
         })
 
     render_page("pages/news_events.html", FRONTEND / "news-events.html", {

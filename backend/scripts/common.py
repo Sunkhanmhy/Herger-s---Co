@@ -3,50 +3,9 @@ from datetime import date
 
 from content.footer import FOOTER
 
-# ---------------------------------------------------------------------------
-# Image resolution: maps every `image_label`/`image_label` placeholder string
-# used across scripts/content/*.py to a real, downloaded, royalty-free stock
-# photo under assets/images/shared/ (see assets/images/shared for licenses —
-# all sourced from Pixabay's Content License, free for commercial use, no
-# attribution required). Matching is keyword-based so new content labels are
-# automatically routed to a sensible category without code changes; images
-# rotate round-robin within a category so repeated labels aren't identical.
-# ---------------------------------------------------------------------------
-_IMAGE_POOL = {
-    "portrait": [f"assets/images/shared/portrait-{i:02d}.jpg" for i in (3, 5, 8)],
-    "mining": [f"assets/images/shared/mining-{i:02d}.jpg" for i in range(1, 4)],
-    "shipping": ["assets/images/shared/shipping-02.jpg"],
-    "courtroom": [f"assets/images/shared/courtroom-{i:02d}.jpg" for i in range(1, 5)],
-    "office": [f"assets/images/shared/office-{i:02d}.jpg" for i in range(1, 4)],
-}
-
-_KEYWORD_CATEGORIES = [
-    (("portrait", "team", "partner", "associate", "attorney", "member", "leadership",
-      "secretary", "counsel", "managing"), "portrait"),
-    (("mining", "mine", "quarry", "exploration", "tin", "tantalite", "limestone",
-      "processing facility", "manufacturing"), "mining"),
-    (("ship", "vessel", "cargo", "port", "container", "maritime", "customs", "lng",
-      "logistics", "trade"), "shipping"),
-    (("court", "hearing", "litigation", "arbitration", "tribunal", "judgment",
-      "investigation", "consultation", "audit", "legal"), "courtroom"),
-]
-_DEFAULT_CATEGORY = "office"
-
-_category_counters: dict[str, int] = {}
-
-
 def image_for(label: str) -> str:
-    """Resolve a content image_label string to a local asset path (see above)."""
-    text = (label or "").lower()
-    category = _DEFAULT_CATEGORY
-    for keywords, cat in _KEYWORD_CATEGORIES:
-        if any(keyword in text for keyword in keywords):
-            category = cat
-            break
-    pool = _IMAGE_POOL[category]
-    index = _category_counters.get(category, 0)
-    _category_counters[category] = index + 1
-    return pool[index % len(pool)]
+    """Every image across the site is enforced to this single asset (per explicit spec)."""
+    return "assets/images/shared/office-01.jpg"
 
 
 PRACTICES = [
@@ -77,24 +36,29 @@ PRACTICES = [
 ]
 
 
-def build_nav(base: str, active: str = "") -> list[dict]:
+def build_nav(base: str, active: str = "", active_item: str = "") -> list[dict]:
     return [
         {"label": "Home", "href": f"{base}index.html", "active": active == "home"},
         {
             "label": "Company",
             "active": active == "company",
             "children": [
-                {"label": "About Herger's & Co.", "href": f"{base}company/about.html"},
-                {"label": "Our Partners", "href": f"{base}company/partners.html"},
-                {"label": "Our Clients", "href": f"{base}company/clients.html"},
-                {"label": "Careers & Positions", "href": f"{base}company/careers.html"},
+                {"label": "About Herger's & Co.", "href": f"{base}company/about.html",
+                 "active": active_item == "about"},
+                {"label": "Our Partners", "href": f"{base}company/partners.html",
+                 "active": active_item == "partners"},
+                {"label": "Our Clients", "href": f"{base}company/clients.html",
+                 "active": active_item == "clients"},
+                {"label": "Careers & Positions", "href": f"{base}company/careers.html",
+                 "active": active_item == "careers"},
             ],
         },
         {
             "label": "Practices & Law",
             "active": active == "practices",
             "children": [
-                {"label": p["label"], "href": f"{base}practices/{p['slug']}.html"}
+                {"label": p["label"], "href": f"{base}practices/{p['slug']}.html",
+                 "active": active_item == p["slug"]}
                 for p in PRACTICES
             ],
         },
@@ -104,10 +68,10 @@ def build_nav(base: str, active: str = "") -> list[dict]:
     ]
 
 
-def base_context(base: str, active: str = "") -> dict:
+def base_context(base: str, active: str = "", active_item: str = "") -> dict:
     return {
         "base": base,
-        "nav": build_nav(base, active),
+        "nav": build_nav(base, active, active_item),
         "practices": PRACTICES,
         "footer": FOOTER,
         "year": date.today().year,
