@@ -22,7 +22,7 @@
             <div class="grid grid-cols-1">
             {% endif %}
             {% for child in item.children %}
-              <a href="{{ child.href }}" class="submenu-link">{{ child.label }}</a>
+              <a href="{{ child.href }}" class="submenu-link {{ 'text-gold-400' if child.active else '' }}">{{ child.label }}</a>
             {% endfor %}
             {% if item.children|length > 6 %}
             </div>
@@ -56,7 +56,7 @@
           </button>
           <div data-open="false" class="ml-3 hidden flex-col border-l border-white/10 pl-3 data-[open=true]:flex">
             {% for child in item.children %}
-              <a href="{{ child.href }}" class="rounded-md px-3 py-2.5 text-sm text-white/75 hover:text-gold-400">{{ child.label }}</a>
+              <a href="{{ child.href }}" class="rounded-md px-3 py-2.5 text-sm text-white/75 hover:text-gold-400 {{ 'text-gold-400' if child.active else '' }}">{{ child.label }}</a>
             {% endfor %}
           </div>
         </div>

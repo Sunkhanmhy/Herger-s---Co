@@ -13,11 +13,6 @@ FOOTER = {
         "governance and dispute resolution matters, in strict alignment with the Constitution "
         "of the Federal Republic of Nigeria 1999 and applicable Acts of the National Assembly."
     ),
-    "social_links": [
-        {"label": "LinkedIn", "href": "#"},
-        {"label": "X", "href": "#"},
-        {"label": "Instagram", "href": "#"},
-    ],
     "address": "16A Ahmadu Bello Way, Victoria Island, Lagos, Nigeria",
     "phone": "+234 (0) 1 234 5678",
     "email": "info@hergerandco.com",
