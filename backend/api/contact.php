@@ -13,15 +13,26 @@ if (is_honeypot_triggered($fields)) {
     json_response(true, 'Thank you — your message has been received.');
 }
 
-$name = sanitize_text((string) ($fields['name'] ?? ''), 150);
+$name = sanitize_text((string) ($fields['first_name'] ?? '') . ' ' . (string) ($fields['last_name'] ?? ''), 150);
+$firstName = sanitize_text((string) ($fields['first_name'] ?? ''), 100);
+$lastName = sanitize_text((string) ($fields['last_name'] ?? ''), 100);
 $email = sanitize_text((string) ($fields['email'] ?? ''), 254);
 $phone = sanitize_text((string) ($fields['phone'] ?? ''), 40);
+$company = sanitize_text((string) ($fields['company'] ?? ''), 150);
+$role = sanitize_text((string) ($fields['role'] ?? ''), 150);
+$officeAddress = sanitize_text((string) ($fields['office_address'] ?? ''), 250);
+$residentialAddress = sanitize_text((string) ($fields['residential_address'] ?? ''), 250);
+$lga = sanitize_text((string) ($fields['lga'] ?? ''), 100);
+$state = sanitize_text((string) ($fields['state'] ?? ''), 100);
+$country = sanitize_text((string) ($fields['country'] ?? ''), 100);
 $subject = sanitize_text((string) ($fields['subject'] ?? 'General Enquiry'), 200);
 $message = sanitize_text((string) ($fields['message'] ?? ''), 5000);
 
 $errors = [];
-if ($name === '') $errors[] = 'name';
+if ($firstName === '') $errors[] = 'first_name';
+if ($lastName === '') $errors[] = 'last_name';
 if (!is_valid_email($email)) $errors[] = 'email';
+if ($phone === '') $errors[] = 'phone';
 if ($message === '') $errors[] = 'message';
 
 if ($errors !== []) {
@@ -32,19 +43,34 @@ $companyEmail = env('COMPANY_EMAIL', 'info@hergerandco.com');
 
 $safeName = e($name);
 $safeEmail = e($email);
-$safePhone = e($phone !== '' ? $phone : '—');
+$safePhone = e($phone);
+$safeCompany = e($company !== '' ? $company : '—');
+$safeRole = e($role !== '' ? $role : '—');
+$safeOfficeAddress = e($officeAddress !== '' ? $officeAddress : '—');
+$safeResidentialAddress = e($residentialAddress !== '' ? $residentialAddress : '—');
+$safeLga = e($lga !== '' ? $lga : '—');
+$safeState = e($state !== '' ? $state : '—');
+$safeCountry = e($country !== '' ? $country : '—');
 $safeSubject = e($subject);
 $safeMessage = nl2br(e($message));
 
 $internalHtml = <<<HTML
 <h2>New Contact Form Submission</h2>
 <p><strong>Name:</strong> {$safeName}</p>
-<p><strong>Email:</strong> {$safeEmail}</p>
+<p><strong>Official Email:</strong> {$safeEmail}</p>
 <p><strong>Phone:</strong> {$safePhone}</p>
+<p><strong>Company / Business:</strong> {$safeCompany}</p>
+<p><strong>Leadership Position / Role:</strong> {$safeRole}</p>
+<p><strong>Office Address:</strong> {$safeOfficeAddress}</p>
+<p><strong>Residential Address:</strong> {$safeResidentialAddress}</p>
+<p><strong>County / L.G.A:</strong> {$safeLga}</p>
+<p><strong>State / Province:</strong> {$safeState}</p>
+<p><strong>Country:</strong> {$safeCountry}</p>
 <p><strong>Subject:</strong> {$safeSubject}</p>
 <p><strong>Message:</strong></p>
 <p>{$safeMessage}</p>
 HTML;
+
 
 [$sent, $err] = resend_send_email($companyEmail, 'Contact Form: ' . $subject, $internalHtml, $email);
 
