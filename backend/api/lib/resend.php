@@ -12,6 +12,11 @@ function resend_send_email(string $toEmail, string $subject, string $htmlBody, ?
     $apiKey = env('RESEND_API_KEY');
     $fromEmail = env('RESEND_FROM_EMAIL', 'Herger\'s & Co. Website <no-reply@notifications.hergerandco.com>');
 
+    if (filter_var($toEmail, FILTER_VALIDATE_EMAIL) === false) {
+        error_log('[resend] Refusing to send: destination address "' . $toEmail . '" is not a valid email (check COMPANY_EMAIL).');
+        return [false, 'Email service is not configured correctly.'];
+    }
+
     if ($apiKey === '' || str_starts_with($apiKey, 're_xxxx')) {
         error_log('[resend] RESEND_API_KEY is not configured — email not sent.');
         return [false, 'Email service is not configured yet.'];
