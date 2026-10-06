@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Herger's &amp; Co.</title>
+  <title>Contact Us - Herger's &amp; Co. &nbsp;| &nbsp; Nigeria's Leading Corporate Law & General Solicitors</title>
   <meta name="description" content="Contact Herger's & Co., schedule a free consultation, or request a paid consultation with hourly-rate estimation." />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -132,19 +132,23 @@
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
     <div class="glass-card-light p-6 text-center">
       <p class="text-xs font-bold uppercase tracking-wider text-gold-700">Address</p>
-      <p class="mt-2 text-sm text-navy-800">16A Ahmadu Bello Way, Victoria Island, Lagos, Nigeria</p>
+      <p class="mt-2 text-sm text-navy-800"> Ahmadu Bello Way, Victoria Island</p>
+    <p class="mt-2 text-sm text-navy-800">Lagos, Nigeria</p>      
     </div>
     <div class="glass-card-light p-6 text-center">
       <p class="text-xs font-bold uppercase tracking-wider text-gold-700">Phone</p>
       <p class="mt-2 text-sm text-navy-800">+234 (0) 1 234 5678</p>
+      <p class="mt-2 text-sm text-navy-800">+234 (0) 1 234 5678</p>
     </div>
     <div class="glass-card-light p-6 text-center">
       <p class="text-xs font-bold uppercase tracking-wider text-gold-700">Email</p>
-      <p class="mt-2 text-sm text-navy-800">info@hergerandco.com</p>
+      <p class="mt-2 text-sm text-navy-800">info@hergers.com</p>
+      <p class="mt-2 text-sm text-navy-800">support@hergers.com</p>
     </div>
     <div class="glass-card-light p-6 text-center">
       <p class="text-xs font-bold uppercase tracking-wider text-gold-700">Office Hours</p>
-      <p class="mt-2 text-sm text-navy-800">Monday – Friday, 8:00am – 6:00pm WAT</p>
+      <p class="mt-2 text-sm text-navy-800">Monday – Friday</p>
+      <p class="mt-2 text-sm text-navy-800">8:00am – 6:00pm WAT</p>
     </div>
   </div>
 </section>
@@ -193,6 +197,7 @@
     </div>
   </div>
 </section>
+
 
 <section id="schedule-consultation" class="solid-surface-light scroll-mt-24">
   <div class="page-shell section-y">
@@ -258,73 +263,6 @@
     </div>
   </div>
 </section>
-
-<section id="paid-consultation" class="page-shell section-y scroll-mt-24">
-  <div class="mx-auto text-center max-w-3xl mb-10 md:mb-14">
-<span class="badge-gold mb-4 inline-block ">Paid Consultation</span>  <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] font-bold leading-tight ">Request a Paid Consultation</h2>
-<p class="mt-4 text-base sm:text-lg leading-relaxed text-navy-700">Use the calculator below for an instant estimate based on session type, duration and urgency. Final billing is always confirmed in writing before your session.</p></div>
-  <form data-api-form="api/paid-consultation.php" data-fee-calculator class="glass-card-light mx-auto max-w-4xl space-y-6 p-6 sm:p-10" novalidate>
-    <input type="text" name="hp_confirm" class="hidden" tabindex="-1" autocomplete="off" />
-
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-      <div>
-        <label class="field-label" for="pc-session-type">Type of Legal Session *</label>
-        <select id="pc-session-type" data-session-type name="session_type" required class="field-input"></select>
-      </div>
-      <div>
-        <label class="field-label" for="pc-urgency">Urgency</label>
-        <select id="pc-urgency" data-urgency name="urgency" class="field-input">
-          <option value="standard">Standard (within 5 business days)</option>
-          <option value="priority">Priority (within 2 business days) — +25%</option>
-          <option value="same_day">Same-Day (subject to availability) — +60%</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-      <div>
-        <label class="field-label" for="pc-hours">Estimated Hours Needed *</label>
-        <input id="pc-hours" data-hours type="number" min="0.5" step="0.5" value="1" name="hours" required class="field-input" />
-      </div>
-      <div class="glass-card p-4">
-        <p class="text-xs uppercase tracking-wider text-white/60">Hourly Rate</p>
-        <p data-rate-output class="text-xl font-bold text-gold-400">—</p>
-      </div>
-    </div>
-
-    <div class="glass-cta p-6 text-center">
-      <p class="text-xs uppercase tracking-wider text-white/70">Estimated Total Fee</p>
-      <p data-fee-output class="mt-1 text-3xl font-bold text-white">—</p>
-      <p class="mt-2 text-xs text-white/60">Estimate only — final billing confirmed in writing before your session.</p>
-    </div>
-    <input type="hidden" data-fee-summary-field name="fee_summary" />
-
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-      <div>
-        <label class="field-label" for="pc-name">Full Name *</label>
-        <input id="pc-name" type="text" name="name" required class="field-input" />
-      </div>
-      <div>
-        <label class="field-label" for="pc-email">Email Address *</label>
-        <input id="pc-email" type="email" name="email" required class="field-input" />
-      </div>
-    </div>
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-      <div>
-        <label class="field-label" for="pc-phone">Phone Number</label>
-        <input id="pc-phone" type="tel" name="phone" class="field-input" />
-      </div>
-    </div>
-    <div>
-      <label class="field-label" for="pc-notes">Notes on Your Matter</label>
-      <textarea id="pc-notes" name="notes" rows="4" class="field-input"></textarea>
-    </div>
-
-    <button type="submit" class="btn-gold w-full">Request Paid Consultation</button>
-    <p data-form-status hidden class="text-sm" role="status"></p>
-  </form>
-</section>
-
 
 
 <section>
@@ -400,7 +338,9 @@
 </section>
 
 
+
   </main>
+
 
 <footer id="footer" class="solid-surface-light border-t border-white/10 scroll-mt-24">
   <div class="page-shell section-y">
