@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Macbook briefing suite preview</title>
+  <desc id="desc">Macbook styled legal briefing workspace with synchronized case notes and research feed.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a1f44" />
+      <stop offset="100%" stop-color="#1f3d76" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96" />
+      <stop offset="100%" stop-color="#edf2fa" stop-opacity="0.96" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)" />
+  <circle cx="1620" cy="220" r="220" fill="#b8860b" fill-opacity="0.2" />
+  <circle cx="250" cy="850" r="260" fill="#132a56" fill-opacity="0.45" />
+
+  <rect x="140" y="100" width="1640" height="860" rx="30" fill="#071735" stroke="#d6ddec" stroke-opacity="0.45" stroke-width="5" />
+  <rect x="170" y="150" width="1580" height="760" rx="24" fill="url(#glass)" />
+
+  <circle cx="210" cy="182" r="8" fill="#ff5f57" />
+  <circle cx="236" cy="182" r="8" fill="#febb2e" />
+  <circle cx="262" cy="182" r="8" fill="#28c840" />
+
+  <text x="260" y="258" fill="#132a56" font-size="50" font-family="Inter, Arial, sans-serif" font-weight="800">Macbook Briefing Suite</text>
+  <text x="260" y="310" fill="#4b679f" font-size="29" font-family="Inter, Arial, sans-serif">Fast legal research and synchronized partner briefs</text>
+
+  <rect x="260" y="350" width="1020" height="500" rx="24" fill="#ffffff" />
+  <text x="298" y="416" fill="#132a56" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="700">Live Matter Notes</text>
+  <rect x="298" y="444" width="944" height="76" rx="14" fill="#f4e2b8" />
+  <text x="330" y="492" fill="#132a56" font-size="24" font-family="Inter, Arial, sans-serif">Corporate Governance hearing moved to 11:30 AM</text>
+  <rect x="298" y="536" width="944" height="76" rx="14" fill="#eef1f7" />
+  <text x="330" y="584" fill="#132a56" font-size="24" font-family="Inter, Arial, sans-serif">Shipping dispute evidence indexed and searchable</text>
+  <rect x="298" y="628" width="944" height="76" rx="14" fill="#eef1f7" />
+  <text x="330" y="676" fill="#132a56" font-size="24" font-family="Inter, Arial, sans-serif">Tax memo ready for partner comments</text>
+
+  <rect x="1310" y="350" width="390" height="500" rx="24" fill="#132a56" />
+  <text x="1344" y="416" fill="#f4e2b8" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="700">Research Feed</text>
+  <rect x="1344" y="448" width="320" height="88" rx="14" fill="#1f3d76" />
+  <text x="1374" y="500" fill="#d6ddec" font-size="23" font-family="Inter, Arial, sans-serif">SEC filing framework</text>
+  <rect x="1344" y="552" width="320" height="88" rx="14" fill="#1f3d76" />
+  <text x="1374" y="604" fill="#d6ddec" font-size="23" font-family="Inter, Arial, sans-serif">FCCPC appeal update</text>
+  <rect x="1344" y="656" width="320" height="88" rx="14" fill="#b8860b" />
+  <text x="1374" y="708" fill="#fff" font-size="23" font-family="Inter, Arial, sans-serif" font-weight="700">Court portal bulletin</text>
+</svg>

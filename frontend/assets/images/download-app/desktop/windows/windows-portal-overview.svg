@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Windows portal overview</title>
+  <desc id="desc">Desktop portal interface for Windows showing legal workflow metrics and case timelines.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a1f44" />
+      <stop offset="100%" stop-color="#224b8c" />
+    </linearGradient>
+    <linearGradient id="frame" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fefefe" />
+      <stop offset="100%" stop-color="#edf2fa" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)" />
+  <circle cx="1620" cy="230" r="200" fill="#b8860b" fill-opacity="0.2" />
+  <circle cx="210" cy="900" r="300" fill="#1f3d76" fill-opacity="0.35" />
+
+  <rect x="150" y="90" width="1620" height="900" rx="30" fill="#071735" stroke="#d6ddec" stroke-opacity="0.45" stroke-width="5" />
+  <rect x="180" y="140" width="1560" height="810" rx="24" fill="url(#frame)" />
+
+  <rect x="220" y="190" width="330" height="710" rx="20" fill="#0a1f44" />
+  <text x="260" y="260" fill="#f4e2b8" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="700">Matter Desk</text>
+  <rect x="255" y="302" width="260" height="12" rx="6" fill="#d6ddec" fill-opacity="0.5" />
+  <rect x="255" y="362" width="240" height="58" rx="12" fill="#b8860b" />
+  <text x="285" y="400" fill="#fff" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700">Dashboard</text>
+  <rect x="255" y="446" width="240" height="58" rx="12" fill="#132a56" />
+  <text x="285" y="484" fill="#d6ddec" font-size="24" font-family="Inter, Arial, sans-serif">Case Rooms</text>
+  <rect x="255" y="530" width="240" height="58" rx="12" fill="#132a56" />
+  <text x="285" y="568" fill="#d6ddec" font-size="24" font-family="Inter, Arial, sans-serif">Court Calendar</text>
+
+  <text x="600" y="250" fill="#132a56" font-size="48" font-family="Inter, Arial, sans-serif" font-weight="800">Windows Legal Portal</text>
+  <text x="600" y="302" fill="#4b679f" font-size="29" font-family="Inter, Arial, sans-serif">Multi-window productivity for legal teams</text>
+
+  <rect x="600" y="340" width="350" height="180" rx="18" fill="#ffffff" />
+  <text x="632" y="408" fill="#132a56" font-size="29" font-family="Inter, Arial, sans-serif" font-weight="700">Active Matters</text>
+  <text x="632" y="478" fill="#0a1f44" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="800">318</text>
+
+  <rect x="980" y="340" width="350" height="180" rx="18" fill="#132a56" />
+  <text x="1012" y="408" fill="#f4e2b8" font-size="29" font-family="Inter, Arial, sans-serif" font-weight="700">Pending Reviews</text>
+  <text x="1012" y="478" fill="#fff" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="800">47</text>
+
+  <rect x="1360" y="340" width="350" height="180" rx="18" fill="#b8860b" />
+  <text x="1392" y="408" fill="#0a1f44" font-size="29" font-family="Inter, Arial, sans-serif" font-weight="700">Urgent Deadlines</text>
+  <text x="1392" y="478" fill="#fff" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="800">09</text>
+
+  <rect x="600" y="550" width="700" height="320" rx="22" fill="#ffffff" />
+  <text x="632" y="615" fill="#132a56" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="700">Team Throughput (30 days)</text>
+  <polyline points="642,790 730,736 820,760 910,682 1000,720 1090,610 1180,665 1270,570" fill="none" stroke="#b8860b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <line x1="642" y1="826" x2="1268" y2="826" stroke="#d6ddec" stroke-width="5" />
+
+  <rect x="1330" y="550" width="380" height="320" rx="22" fill="#ffffff" />
+  <text x="1362" y="615" fill="#132a56" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="700">Alerts</text>
+  <rect x="1362" y="646" width="316" height="66" rx="13" fill="#f4e2b8" />
+  <text x="1388" y="690" fill="#132a56" font-size="24" font-family="Inter, Arial, sans-serif">Tax hearing updated</text>
+  <rect x="1362" y="724" width="316" height="66" rx="13" fill="#eef1f7" />
+  <text x="1388" y="768" fill="#132a56" font-size="24" font-family="Inter, Arial, sans-serif">IPO filing approved</text>
+  <rect x="1362" y="802" width="316" height="66" rx="13" fill="#eef1f7" />
+  <text x="1388" y="846" fill="#132a56" font-size="24" font-family="Inter, Arial, sans-serif">Evidence chain verified</text>
+</svg>
