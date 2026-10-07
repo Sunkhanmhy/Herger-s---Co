@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 2160" role="img" aria-labelledby="title desc">
+  <title id="title">iOS secure client chat preview</title>
+  <desc id="desc">An iOS messaging and legal support interface with encrypted conversation cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#05122a" />
+      <stop offset="100%" stop-color="#132a56" />
+    </linearGradient>
+    <linearGradient id="sheet" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fbfcfe" />
+      <stop offset="100%" stop-color="#ecf1f9" />
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="2160" fill="url(#bg)" />
+  <circle cx="840" cy="280" r="240" fill="#b8860b" fill-opacity="0.2" />
+  <circle cx="210" cy="1960" r="330" fill="#1f3d76" fill-opacity="0.3" />
+
+  <rect x="170" y="95" width="740" height="1980" rx="110" fill="#081b3c" stroke="#d6ddec" stroke-opacity="0.4" stroke-width="8" />
+  <rect x="198" y="182" width="684" height="1798" rx="62" fill="url(#sheet)" />
+
+  <text x="260" y="316" fill="#132a56" font-size="42" font-family="Inter, Arial, sans-serif" font-weight="800">Client Support</text>
+  <text x="260" y="364" fill="#4b679f" font-size="27" font-family="Inter, Arial, sans-serif">Encrypted legal communication on iOS</text>
+
+  <rect x="260" y="424" width="560" height="116" rx="24" fill="#132a56" />
+  <text x="296" y="496" fill="#f4e2b8" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="700">Matters are protected by default</text>
+
+  <rect x="260" y="590" width="560" height="165" rx="22" fill="#ffffff" />
+  <circle cx="318" cy="672" r="31" fill="#b8860b" />
+  <text x="370" y="667" fill="#132a56" font-size="27" font-family="Inter, Arial, sans-serif" font-weight="700">Partner O. Adewale</text>
+  <text x="370" y="709" fill="#5a77b3" font-size="24" font-family="Inter, Arial, sans-serif">Draft clause approved for filing.</text>
+
+  <rect x="260" y="776" width="560" height="165" rx="22" fill="#eef1f7" />
+  <circle cx="318" cy="858" r="31" fill="#1f3d76" />
+  <text x="370" y="853" fill="#132a56" font-size="27" font-family="Inter, Arial, sans-serif" font-weight="700">Apex Marine Team</text>
+  <text x="370" y="895" fill="#5a77b3" font-size="24" font-family="Inter, Arial, sans-serif">Evidence packet received and indexed.</text>
+
+  <rect x="260" y="962" width="560" height="165" rx="22" fill="#ffffff" />
+  <circle cx="318" cy="1044" r="31" fill="#b8860b" />
+  <text x="370" y="1039" fill="#132a56" font-size="27" font-family="Inter, Arial, sans-serif" font-weight="700">Court Schedule Bot</text>
+  <text x="370" y="1081" fill="#5a77b3" font-size="24" font-family="Inter, Arial, sans-serif">Your hearing starts in 45 minutes.</text>
+
+  <rect x="260" y="1170" width="560" height="460" rx="30" fill="#ffffff" />
+  <text x="292" y="1242" fill="#132a56" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="700">Security Snapshot</text>
+  <rect x="292" y="1286" width="496" height="102" rx="18" fill="#f4e2b8" />
+  <text x="322" y="1348" fill="#132a56" font-size="25" font-family="Inter, Arial, sans-serif">Face ID login: enabled</text>
+  <rect x="292" y="1410" width="496" height="102" rx="18" fill="#eef1f7" />
+  <text x="322" y="1472" fill="#132a56" font-size="25" font-family="Inter, Arial, sans-serif">Auto-delete idle sessions: on</text>
+  <rect x="292" y="1534" width="496" height="102" rx="18" fill="#eef1f7" />
+  <text x="322" y="1596" fill="#132a56" font-size="25" font-family="Inter, Arial, sans-serif">Export archive watermark: active</text>
+</svg>

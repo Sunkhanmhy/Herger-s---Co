@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Macbook focus mode preview</title>
+  <desc id="desc">A focused writing and review workspace for Macbook with distraction-free legal drafting tools.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#061633" />
+      <stop offset="100%" stop-color="#224b8c" />
+    </linearGradient>
+    <linearGradient id="screen" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fefefe" />
+      <stop offset="100%" stop-color="#eef2fa" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)" />
+  <circle cx="1480" cy="170" r="180" fill="#b8860b" fill-opacity="0.18" />
+
+  <rect x="160" y="90" width="1600" height="900" rx="28" fill="#071735" stroke="#d6ddec" stroke-opacity="0.42" stroke-width="5" />
+  <rect x="190" y="140" width="1540" height="810" rx="22" fill="url(#screen)" />
+
+  <text x="260" y="258" fill="#132a56" font-size="50" font-family="Inter, Arial, sans-serif" font-weight="800">Focus Drafting Mode</text>
+  <text x="260" y="310" fill="#4b679f" font-size="29" font-family="Inter, Arial, sans-serif">Macbook-native writing canvas with citation support</text>
+
+  <rect x="260" y="350" width="1080" height="540" rx="24" fill="#ffffff" />
+  <text x="300" y="420" fill="#132a56" font-size="35" font-family="Inter, Arial, sans-serif" font-weight="700">Memorandum Draft: Regulatory Exposure Assessment</text>
+  <rect x="300" y="454" width="1000" height="16" rx="8" fill="#eef1f7" />
+  <rect x="300" y="492" width="980" height="16" rx="8" fill="#eef1f7" />
+  <rect x="300" y="530" width="1010" height="16" rx="8" fill="#eef1f7" />
+  <rect x="300" y="568" width="940" height="16" rx="8" fill="#eef1f7" />
+  <rect x="300" y="606" width="1002" height="16" rx="8" fill="#eef1f7" />
+  <rect x="300" y="644" width="970" height="16" rx="8" fill="#eef1f7" />
+  <rect x="300" y="682" width="990" height="16" rx="8" fill="#eef1f7" />
+  <rect x="300" y="720" width="760" height="16" rx="8" fill="#eef1f7" />
+
+  <rect x="1370" y="350" width="320" height="540" rx="24" fill="#132a56" />
+  <text x="1402" y="420" fill="#f4e2b8" font-size="33" font-family="Inter, Arial, sans-serif" font-weight="700">Tools</text>
+  <rect x="1402" y="454" width="256" height="70" rx="14" fill="#1f3d76" />
+  <text x="1432" y="498" fill="#d6ddec" font-size="24" font-family="Inter, Arial, sans-serif">Citation Finder</text>
+  <rect x="1402" y="540" width="256" height="70" rx="14" fill="#1f3d76" />
+  <text x="1432" y="584" fill="#d6ddec" font-size="24" font-family="Inter, Arial, sans-serif">Clause Compare</text>
+  <rect x="1402" y="626" width="256" height="70" rx="14" fill="#b8860b" />
+  <text x="1432" y="670" fill="#fff" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700">Export Draft</text>
+  <rect x="1402" y="712" width="256" height="70" rx="14" fill="#1f3d76" />
+  <text x="1432" y="756" fill="#d6ddec" font-size="24" font-family="Inter, Arial, sans-serif">Partner Notes</text>
+</svg>
