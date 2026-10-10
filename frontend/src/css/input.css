@@ -123,16 +123,27 @@
   }
 
   .stat-card {
-    @apply glass-card-light p-6 text-center;
+    @apply glass-card-light p-3 text-center sm:p-6;
   }
 
   /* ---------- Hero / banner: fills the viewport below the sticky h-20 header (reduced top gap) ---------- */
   .hero-banner {
     @apply min-h-[calc(100dvh-5rem)];
   }
-  /* .hero-main (image holder + text content) is hidden below md; shown at md: via "hidden md:grid"
-     on the element itself (see home.html). The standalone-PWA rule below additionally force-hides
-     it even on md+ viewports when the site is launched as an installed PWA. */
+  /* .hero-main (text content) is shown on all breakpoints; only its image holder (lg:col-span-5)
+     is hidden below md (see index.html's "hidden md:block" wrapper). The standalone-PWA rule below
+     still force-hides the entire .hero-main (text + image) even on md+ viewports when the site is
+     launched as an installed PWA — unrelated to the mobile/video changes above, left as-is. */
+
+  /* ---------- Hero banner video background: stretch-fills the section behind every layout ---------- */
+  .hero-video {
+    @apply pointer-events-none absolute inset-0 h-full w-full object-fill;
+  }
+  /* Overlay tint = hero-banner's default solid-surface color (navy-900 #0a1f44), 75% opaque / 25% transparent over the video. */
+  .hero-video-overlay {
+    @apply pointer-events-none absolute inset-0;
+    background-color: rgba(10, 31, 68, 0.75);
+  }
 }
 
 /* Installed PWA (display-mode: standalone) always hides the hero's image holder + content,
