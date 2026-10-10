@@ -4,6 +4,7 @@ import { initFeeCalculator } from "./calculator";
 import { initForms } from "./forms";
 import { initCalendly } from "./calendly";
 import { initHeroSlider } from "./hero-slider";
+import { initHeroVideo } from "./hero-video";
 
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
@@ -13,4 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initForms();
   initCalendly();
   initHeroSlider();
+  initHeroVideo();
 });
