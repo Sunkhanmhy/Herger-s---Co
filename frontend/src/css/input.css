@@ -139,10 +139,10 @@
   .hero-video {
     @apply pointer-events-none absolute inset-0 h-full w-full object-fill;
   }
-  /* Overlay tint = hero-banner's default solid-surface color (navy-900 #0a1f44), 75% opaque / 25% transparent over the video. */
+  /* Overlay tint = solid black, 80% opaque over the video. */
   .hero-video-overlay {
-    @apply pointer-events-none absolute inset-0;
-    background-color: rgba(10, 31, 68, 0.75);
+    @apply pointer-events-none absolute inset-0 bg-black;
+    opacity: 0.8;
   }
 }
 
