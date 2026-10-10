@@ -79,6 +79,23 @@
     @apply absolute inset-x-0 bottom-0 bg-navy-950/80 px-3 py-2 text-xs text-gold-100 backdrop-blur-sm;
   }
 
+  /* ---------- Hero image slider (3-image auto-sliding carousel) ---------- */
+  .img-slider-track {
+    @apply flex h-full w-full transition-transform duration-700 ease-in-out;
+  }
+  .img-slider-slide {
+    @apply h-full w-full flex-none;
+  }
+  .img-slider-dots {
+    @apply absolute inset-x-0 bottom-3 z-10 flex items-center justify-center gap-2;
+  }
+  .img-slider-dot {
+    @apply h-2 w-2 rounded-full border-0 bg-white/50 p-0 transition-all duration-200;
+  }
+  .img-slider-dot[aria-current="true"] {
+    @apply w-5 bg-gold-500;
+  }
+
   /* ---------- Forms ---------- */
   .field-label {
     @apply mb-1.5 block text-sm font-semibold text-navy-800;
