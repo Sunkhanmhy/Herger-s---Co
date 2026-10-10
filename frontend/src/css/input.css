@@ -139,10 +139,10 @@
   .hero-video {
     @apply pointer-events-none absolute inset-0 h-full w-full object-fill;
   }
-  /* Overlay tint = solid black, 80% opaque over the video. */
+  /* Overlay tint = dark-black, 85% opaque over the video (no gold/blue tint). */
   .hero-video-overlay {
     @apply pointer-events-none absolute inset-0 bg-black;
-    opacity: 0.8;
+    opacity: 0.85;
   }
 }
 

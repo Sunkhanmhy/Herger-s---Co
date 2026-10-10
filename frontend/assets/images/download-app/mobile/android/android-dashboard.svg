@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 2160" role="img" aria-labelledby="title desc">
-  <title id="title">Android dashboard preview</title>
-  <desc id="desc">A modern Android app dashboard interface with legal brief cards and performance charts.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 960" role="img" aria-labelledby="title desc">
+  <title id="title">Android client app preview</title>
+  <desc id="desc">Two overlapping Android phone mockups showing the Herger's &amp; Co. client app: consultation booking, profile dashboard, support tickets, IT support status and an in-progress conference call.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#071735" />
@@ -15,39 +15,122 @@
       <stop offset="100%" stop-color="#e0b44a" />
     </linearGradient>
   </defs>
-  <rect width="1080" height="2160" fill="url(#bg)" />
-  <circle cx="170" cy="260" r="210" fill="#b8860b" fill-opacity="0.2" />
-  <circle cx="950" cy="540" r="280" fill="#e0b44a" fill-opacity="0.15" />
+  <rect width="1080" height="960" fill="url(#bg)" />
+  <circle cx="160" cy="190" r="150" fill="#b8860b" fill-opacity="0.18" />
+  <circle cx="960" cy="760" r="210" fill="#e0b44a" fill-opacity="0.14" />
 
-  <rect x="180" y="110" width="720" height="1940" rx="86" fill="#0a1f44" stroke="#d6ddec" stroke-opacity="0.35" stroke-width="8" />
-  <rect x="205" y="205" width="670" height="1760" rx="54" fill="url(#card)" />
+  <!-- ===================== Phone A (back / left): dashboard ===================== -->
+  <rect x="40" y="40" width="520" height="860" rx="72" fill="#0a1f44" stroke="#d6ddec" stroke-opacity="0.35" stroke-width="8" />
+  <rect x="64" y="92" width="472" height="756" rx="40" fill="url(#card)" />
 
-  <rect x="255" y="300" width="570" height="90" rx="24" fill="#f4e2b8" />
-  <text x="285" y="358" fill="#0a1f44" font-size="38" font-family="Inter, Arial, sans-serif" font-weight="700">Herger Client App</text>
+  <!-- Status bar: Android punch-hole camera + clock + signal/wifi/battery -->
+  <circle cx="300" cy="66" r="9" fill="#000000" />
+  <text x="84" y="150" fill="#0a1f44" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="700">9:41</text>
+  <rect x="430" y="138" width="7" height="14" rx="2" fill="#0a1f44" />
+  <rect x="441" y="132" width="7" height="20" rx="2" fill="#0a1f44" />
+  <rect x="452" y="126" width="7" height="26" rx="2" fill="#0a1f44" />
+  <path d="M468 150 q14 -22 28 0" stroke="#0a1f44" stroke-width="5" fill="none" stroke-linecap="round" />
+  <rect x="494" y="132" width="34" height="18" rx="4" fill="none" stroke="#0a1f44" stroke-width="3" />
+  <rect x="497" y="135" width="26" height="12" rx="2" fill="#0a1f44" />
+  <rect x="530" y="137" width="4" height="8" rx="2" fill="#0a1f44" />
 
-  <rect x="255" y="430" width="570" height="230" rx="30" fill="#ffffff" />
-  <text x="285" y="505" fill="#132a56" font-size="42" font-family="Inter, Arial, sans-serif" font-weight="700">Today</text>
-  <text x="285" y="565" fill="#3a5a9a" font-size="30" font-family="Inter, Arial, sans-serif">2 meetings, 1 filing deadline</text>
-  <rect x="285" y="598" width="260" height="18" rx="9" fill="url(#accent)" />
+  <!-- Header: profile dashboard -->
+  <circle cx="104" cy="205" r="22" fill="url(#accent)" />
+  <text x="104" y="212" fill="#0a1f44" font-size="18" font-family="Inter, Arial, sans-serif" font-weight="800" text-anchor="middle">AO</text>
+  <text x="138" y="200" fill="#132a56" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="700">Hello, Adaeze</text>
+  <text x="138" y="224" fill="#5a77b3" font-size="15" font-family="Inter, Arial, sans-serif">Corporate Client</text>
 
-  <rect x="255" y="700" width="270" height="290" rx="24" fill="#132a56" />
-  <text x="285" y="782" fill="#f4e2b8" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="700">Cases</text>
-  <text x="285" y="870" fill="#ffffff" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="800">124</text>
-  <text x="285" y="920" fill="#d6ddec" font-size="24" font-family="Inter, Arial, sans-serif">active records</text>
+  <!-- Card: book / upcoming consultation session -->
+  <rect x="84" y="255" width="432" height="160" rx="20" fill="#ffffff" stroke="#d6ddec" stroke-width="2" />
+  <text x="104" y="288" fill="#132a56" font-size="19" font-family="Inter, Arial, sans-serif" font-weight="700">Upcoming Consultation</text>
+  <rect x="104" y="300" width="26" height="22" rx="4" fill="none" stroke="#b8860b" stroke-width="3" />
+  <line x1="104" y1="308" x2="130" y2="308" stroke="#b8860b" stroke-width="2" />
+  <text x="140" y="318" fill="#3a5a9a" font-size="14" font-family="Inter, Arial, sans-serif">Mon, 14 Oct &#8226; 10:30 AM</text>
+  <text x="104" y="345" fill="#3a5a9a" font-size="14" font-family="Inter, Arial, sans-serif">Partner: B. Herger &#8212; Case Review</text>
+  <rect x="104" y="365" width="150" height="38" rx="19" fill="url(#accent)" />
+  <text x="130" y="390" fill="#ffffff" font-size="15" font-family="Inter, Arial, sans-serif" font-weight="700">Join Call</text>
 
-  <rect x="555" y="700" width="270" height="290" rx="24" fill="#b8860b" />
-  <text x="585" y="782" fill="#0a1f44" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="700">Tasks</text>
-  <text x="585" y="870" fill="#ffffff" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="800">39</text>
-  <text x="585" y="920" fill="#fbf3e0" font-size="24" font-family="Inter, Arial, sans-serif">priority actions</text>
+  <!-- Stat row: ticketing + IT support -->
+  <rect x="84" y="435" width="206" height="170" rx="18" fill="#132a56" />
+  <text x="104" y="468" fill="#f4e2b8" font-size="18" font-family="Inter, Arial, sans-serif" font-weight="700">Tickets</text>
+  <text x="104" y="545" fill="#ffffff" font-size="60" font-family="Inter, Arial, sans-serif" font-weight="800">5</text>
+  <text x="104" y="580" fill="#d6ddec" font-size="15" font-family="Inter, Arial, sans-serif">open now</text>
 
-  <rect x="255" y="1040" width="570" height="410" rx="30" fill="#ffffff" />
-  <text x="285" y="1112" fill="#132a56" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="700">Matter Performance</text>
-  <polyline points="285,1320 360,1270 430,1315 500,1180 570,1210 640,1120 710,1168 780,1080" fill="none" stroke="#b8860b" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
-  <line x1="285" y1="1365" x2="780" y2="1365" stroke="#d6ddec" stroke-width="6" />
+  <rect x="310" y="435" width="206" height="170" rx="18" fill="#b8860b" />
+  <text x="330" y="468" fill="#0a1f44" font-size="18" font-family="Inter, Arial, sans-serif" font-weight="700">IT Support</text>
+  <circle cx="338" cy="520" r="7" fill="#1f9d55" />
+  <text x="354" y="527" fill="#ffffff" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="800">Online</text>
+  <text x="330" y="580" fill="#fbf3e0" font-size="14" font-family="Inter, Arial, sans-serif">avg reply 2m</text>
 
-  <rect x="255" y="1490" width="570" height="250" rx="28" fill="#132a56" />
-  <text x="285" y="1562" fill="#f4e2b8" font-size="32" font-family="Inter, Arial, sans-serif" font-weight="700">Upload Case Evidence</text>
-  <text x="285" y="1615" fill="#d6ddec" font-size="27" font-family="Inter, Arial, sans-serif">Scan and sync files to your legal room.</text>
-  <rect x="285" y="1652" width="220" height="58" rx="16" fill="#b8860b" />
-  <text x="328" y="1690" fill="#ffffff" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="700">Open Tool</text>
+  <!-- In-app bottom tab bar: Home / Bookings / Tickets / Profile -->
+  <line x1="84" y1="630" x2="516" y2="630" stroke="#d6ddec" stroke-width="3" />
+  <polygon points="140,650 118,670 128,670 128,682 152,682 152,670 162,670" fill="#b8860b" />
+  <text x="140" y="700" fill="#132a56" font-size="12" font-family="Inter, Arial, sans-serif" text-anchor="middle">Home</text>
+  <rect x="312" y="650" width="36" height="30" rx="4" fill="none" stroke="#132a56" stroke-width="4" />
+  <line x1="312" y1="660" x2="348" y2="660" stroke="#132a56" stroke-width="3" />
+  <text x="330" y="700" fill="#132a56" font-size="12" font-family="Inter, Arial, sans-serif" text-anchor="middle">Bookings</text>
+  <rect x="402" y="652" width="40" height="28" rx="8" fill="none" stroke="#132a56" stroke-width="4" />
+  <circle cx="402" cy="666" r="4" fill="#eef1f7" stroke="#132a56" stroke-width="3" />
+  <circle cx="442" cy="666" r="4" fill="#eef1f7" stroke="#132a56" stroke-width="3" />
+  <text x="422" y="700" fill="#132a56" font-size="12" font-family="Inter, Arial, sans-serif" text-anchor="middle">Tickets</text>
+  <circle cx="490" cy="662" r="12" fill="none" stroke="#132a56" stroke-width="4" />
+  <path d="M472 690 q18 -20 36 0" stroke="#132a56" stroke-width="4" fill="none" stroke-linecap="round" />
+  <text x="490" y="710" fill="#132a56" font-size="12" font-family="Inter, Arial, sans-serif" text-anchor="middle">Profile</text>
+
+  <!-- OS bottom navigation: classic Android 3-button soft keys -->
+  <line x1="84" y1="725" x2="516" y2="725" stroke="#d6ddec" stroke-width="2" />
+  <polygon points="200,745 182,763 200,781" fill="none" stroke="#132a56" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="300" cy="763" r="18" fill="none" stroke="#132a56" stroke-width="6" />
+  <rect x="382" y="745" width="36" height="36" rx="6" fill="none" stroke="#132a56" stroke-width="6" />
+
+  <!-- Soft shadow cast by the front phone -->
+  <rect x="480" y="145" width="470" height="790" rx="66" fill="#000000" fill-opacity="0.25" />
+
+  <!-- ===================== Phone B (front / right): conference call + support ===================== -->
+  <rect x="470" y="130" width="470" height="790" rx="66" fill="#0a1f44" stroke="#d6ddec" stroke-opacity="0.42" stroke-width="8" />
+  <rect x="493" y="180" width="424" height="694" rx="36" fill="url(#card)" />
+
+  <circle cx="705" cy="155" r="8" fill="#000000" />
+  <text x="513" y="232" fill="#0a1f44" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="700">9:41</text>
+  <rect x="855" y="222" width="6" height="12" rx="2" fill="#0a1f44" />
+  <rect x="864" y="217" width="6" height="17" rx="2" fill="#0a1f44" />
+  <rect x="873" y="212" width="6" height="22" rx="2" fill="#0a1f44" />
+  <path d="M888 232 q12 -18 24 0" stroke="#0a1f44" stroke-width="4" fill="none" stroke-linecap="round" />
+  <rect x="918" y="216" width="30" height="16" rx="4" fill="none" stroke="#0a1f44" stroke-width="3" />
+  <rect x="921" y="219" width="22" height="10" rx="2" fill="#0a1f44" />
+  <rect x="950" y="221" width="4" height="7" rx="2" fill="#0a1f44" />
+
+  <path d="M513 265 l-14 14 l14 14" stroke="#132a56" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="540" y="284" fill="#132a56" font-size="20" font-family="Inter, Arial, sans-serif" font-weight="700">Conference Call</text>
+
+  <!-- Live video call card -->
+  <rect x="513" y="300" width="384" height="230" rx="24" fill="#132a56" />
+  <circle cx="705" cy="415" r="42" fill="url(#accent)" />
+  <text x="705" y="428" fill="#0a1f44" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="800" text-anchor="middle">BH</text>
+  <text x="545" y="480" fill="#ffffff" font-size="18" font-family="Inter, Arial, sans-serif" font-weight="700">B. Herger &#8212; Partner</text>
+  <text x="545" y="505" fill="#d6ddec" font-size="15" font-family="Inter, Arial, sans-serif">Case: Apex Marine Ltd</text>
+
+  <!-- Call control row -->
+  <circle cx="595" cy="575" r="28" fill="none" stroke="#132a56" stroke-width="5" />
+  <rect x="589" y="561" width="12" height="20" rx="6" fill="#132a56" />
+  <circle cx="705" cy="575" r="28" fill="none" stroke="#132a56" stroke-width="5" />
+  <polygon points="697,565 697,585 715,575" fill="#132a56" />
+  <circle cx="815" cy="575" r="28" fill="url(#accent)" />
+  <circle cx="815" cy="575" r="9" fill="#ffffff" />
+
+  <!-- Support ticket card -->
+  <rect x="513" y="625" width="384" height="92" rx="18" fill="#ffffff" stroke="#d6ddec" stroke-width="2" />
+  <text x="533" y="657" fill="#132a56" font-size="17" font-family="Inter, Arial, sans-serif" font-weight="700">Ticket #4821</text>
+  <text x="533" y="680" fill="#5a77b3" font-size="13" font-family="Inter, Arial, sans-serif">Signature delay &#8212; Apex Marine</text>
+  <rect x="533" y="690" width="90" height="26" rx="13" fill="#f4e2b8" />
+  <text x="550" y="708" fill="#132a56" font-size="13" font-family="Inter, Arial, sans-serif" font-weight="700">Open</text>
+
+  <!-- IT support card -->
+  <rect x="513" y="729" width="384" height="92" rx="18" fill="#132a56" />
+  <circle cx="548" cy="775" r="18" fill="url(#accent)" />
+  <text x="580" y="770" fill="#f4e2b8" font-size="17" font-family="Inter, Arial, sans-serif" font-weight="700">IT Support</text>
+  <text x="580" y="796" fill="#d6ddec" font-size="14" font-family="Inter, Arial, sans-serif">How can we help today?</text>
+
+  <!-- OS bottom navigation: modern Android gesture pill -->
+  <rect x="685" y="845" width="40" height="6" rx="3" fill="#132a56" fill-opacity="0.4" />
 </svg>
