@@ -39,8 +39,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        serif: ["'Playfair Display'", "Georgia", "serif"],
-        sans: ["'Inter'", "system-ui", "sans-serif"]
+        serif: ["'Alatsi'", "Georgia", "serif"],
+        sans: ["'Alatsi'", "system-ui", "sans-serif"]
       },
       boxShadow: {
         glass: "0 8px 32px 0 rgba(10, 31, 68, 0.25)",

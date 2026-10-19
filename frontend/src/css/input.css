@@ -8,6 +8,21 @@
   }
   body {
     @apply bg-navy-50 text-navy-900 font-sans antialiased;
+    font-weight: 400;
+  }
+  p, li, ul, ol, blockquote, small, figcaption, label, address, time, td, th, span, a, em, i, div {
+    font-weight: 400 !important;
+  }
+  h1, h2, h3, h4, h5, h6,
+  .btn, .btn-gold, .btn-outline-gold, .btn-navy, .btn-ghost-light,
+  .nav-link, .submenu-link, .field-label, .badge-gold {
+    font-weight: 700;
+  }
+  strong, b {
+    font-weight: 400 !important;
+  }
+  .condition, .bracket-condition {
+    font-weight: 700 !important;
   }
   h1, h2, h3, h4 {
     @apply font-serif text-navy-900;
