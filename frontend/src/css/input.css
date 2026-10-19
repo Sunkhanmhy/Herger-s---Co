@@ -30,6 +30,28 @@
   a {
     @apply transition-colors duration-200;
   }
+  .brand-mark {
+    display: block;
+    width: 2.75rem;
+    height: 2.75rem;
+    object-fit: contain;
+    background: transparent;
+    border: 1px solid rgba(212, 166, 77, 0.45);
+    border-radius: 0.75rem;
+    padding: 0.15rem;
+    box-sizing: border-box;
+  }
+  .brand-mark--footer {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  img[src$="logos.png"], img[src$="hergers-mark.svg"] {
+    display: block;
+    object-fit: contain;
+    background: transparent;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @layer components {
